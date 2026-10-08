@@ -116,30 +116,46 @@
                     <li><span class="highlight">Trazabilidad 100%:</span> Mapeo de cajeros reales y código único por transacción (Correlation ID).</li>
                     <li><span class="highlight">Integración Segura:</span> Middleware con comunicación cifrada sin alteraciones manuales.</li>
                 </ul>
-                <!-- Diagrama Dinámico Mermaid -->
-                <div class="mermaid">
-                    graph LR
-                        A["Cajero Identificado"] -->|"Transacción"| B("Correlation ID")
-                        B -->|"Middleware Cifrado"| C[("Base de Datos<br>Inmutable")]
-                        style B fill:#fcf1f1,stroke:#c04048,stroke-width:2px;
-                        style C fill:#f8f9fa,stroke:#1a1a1a;
+                <!-- Gráfico Estático -->
+                <div class="flex-container" style="margin-top: 30px; align-items: center; justify-content: center; gap: 10px;">
+                    <div style="background:#f8f9fa; padding:15px; border-radius:8px; border:2px solid #1a1a1a; font-size:0.8em; font-weight:bold; text-align:center;">
+                        👤 Cajero Identificado
+                    </div>
+                    <div style="font-size:1.5em; color:#c04048;">➔</div>
+                    <div style="background:#fcf1f1; padding:15px; border-radius:8px; border:2px solid #c04048; font-size:0.8em; font-weight:bold; color:#c04048; text-align:center;">
+                        🆔 Correlation ID<br><small style="color:#555;">(Transacción)</small>
+                    </div>
+                    <div style="font-size:1.5em; color:#1a1a1a;">➔</div>
+                    <div style="background:#1a1a1a; padding:15px; border-radius:8px; color:white; font-size:0.8em; font-weight:bold; text-align:center;">
+                        🔒 Base de Datos<br><small style="color:#bbb;">(Inmutable)</small>
+                    </div>
                 </div>
             </section>
 
             <!-- Diapositiva 6: Gobierno TI -->
             <section>
                 <h2>Modelo de Gobierno y Estructura de TI</h2>
-                <div class="mermaid" style="transform: scale(1.1); margin-top: 40px;">
-                    graph TD
-                        A["Junta Directiva"] --> B["Director de Sistemas<br>Estrategia y Orquestación"]
-                        B --> C["Puente de Integración Middleware"]
-                        B --> D["Seguridad de la Información"]
-                        B --> E["Asistentes In-Situ<br>Soporte Inmediato Cajas"]
-                        style A fill:#1a1a1a,stroke:#1a1a1a,color:#ffffff
-                        style B fill:#c04048,stroke:#c04048,color:#ffffff
-                        style C fill:#f8f9fa,stroke:#c04048
-                        style D fill:#f8f9fa,stroke:#c04048
-                        style E fill:#f8f9fa,stroke:#c04048
+                <!-- Organigrama Estático -->
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="background:#1a1a1a; color:white; padding:10px 20px; border-radius:8px; display:inline-block; font-weight:bold; font-size:0.9em;">
+                        🏛️ Junta Directiva
+                    </div>
+                    <div style="font-size:1.5em; color:#1a1a1a; margin: 5px 0;">⬇</div>
+                    <div style="background:#c04048; color:white; padding:15px 20px; border-radius:8px; display:inline-block; font-weight:bold; font-size:1em; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+                        👨‍💻 Director de Sistemas<br><small style="font-weight:normal; color:#fcf1f1;">Estrategia y Orquestación</small>
+                    </div>
+                    <div style="font-size:1.5em; color:#c04048; margin: 5px 0;">⬇</div>
+                    <div class="flex-container" style="margin-top: 0; align-items: stretch; justify-content: center; gap: 15px;">
+                        <div style="background:#f8f9fa; padding:15px; border-radius:8px; border-top: 4px solid #c04048; width: 30%; font-size: 0.8em; font-weight:bold; box-sizing: border-box;">
+                            🔌 Puente de Integración<br><small style="color:#555; font-weight:normal;">Middleware</small>
+                        </div>
+                        <div style="background:#f8f9fa; padding:15px; border-radius:8px; border-top: 4px solid #c04048; width: 30%; font-size: 0.8em; font-weight:bold; box-sizing: border-box;">
+                            🛡️ Seguridad de la Información<br><small style="color:#555; font-weight:normal;">Auditoría</small>
+                        </div>
+                        <div style="background:#f8f9fa; padding:15px; border-radius:8px; border-top: 4px solid #c04048; width: 30%; font-size: 0.8em; font-weight:bold; box-sizing: border-box;">
+                            🛠️ Asistentes In-Situ<br><small style="color:#555; font-weight:normal;">Soporte en Cajas</small>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -162,10 +178,8 @@
         </div>
     </div>
 
-    <!-- Scripts de Reveal.js, Chart.js y Mermaid -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
     <script>
         // Inicializar Reveal.js
@@ -174,9 +188,6 @@
             transition: 'slide', // none/fade/slide/convex/concave/zoom
             slideNumber: 'c/t'
         });
-
-        // Inicializar Mermaid
-        mermaid.initialize({ startOnLoad: true, theme: 'default' });
 
         // Inicializar Chart.js en la diapositiva 3 al volverse visible
         Reveal.on('slidechanged', event => {
