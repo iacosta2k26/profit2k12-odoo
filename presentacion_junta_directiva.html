@@ -119,10 +119,10 @@
                 <!-- Diagrama Dinámico Mermaid -->
                 <div class="mermaid">
                     graph LR
-                        A[Cajero Identificado] -->|Transacción| B(Correlation ID)
-                        B -->|Middleware Cifrado| C[(Base de Datos<br>Inmutable)]
-                        style B fill:#f9d0c4,stroke:#e74c3c,stroke-width:2px;
-                        style C fill:#d5f5e3,stroke:#2ecc71;
+                        A["Cajero Identificado"] -->|"Transacción"| B("Correlation ID")
+                        B -->|"Middleware Cifrado"| C[("Base de Datos<br>Inmutable")]
+                        style B fill:#fcf1f1,stroke:#c04048,stroke-width:2px;
+                        style C fill:#f8f9fa,stroke:#1a1a1a;
                 </div>
             </section>
 
@@ -131,12 +131,15 @@
                 <h2>Modelo de Gobierno y Estructura de TI</h2>
                 <div class="mermaid" style="transform: scale(1.1); margin-top: 40px;">
                     graph TD
-                        A[Junta Directiva] --> B[Director de Sistemas<br>Estrategia y Orquestación]
-                        B --> C[Puente de Integración Middleware]
-                        B --> D[Seguridad de la Información]
-                        B --> E[Asistentes In-Situ<br>Soporte Inmediato Cajas]
-                        style A fill:#eaeded,stroke:#34495e
-                        style B fill:#ebdef0,stroke:#8e44ad
+                        A["Junta Directiva"] --> B["Director de Sistemas<br>Estrategia y Orquestación"]
+                        B --> C["Puente de Integración Middleware"]
+                        B --> D["Seguridad de la Información"]
+                        B --> E["Asistentes In-Situ<br>Soporte Inmediato Cajas"]
+                        style A fill:#1a1a1a,stroke:#1a1a1a,color:#ffffff
+                        style B fill:#c04048,stroke:#c04048,color:#ffffff
+                        style C fill:#f8f9fa,stroke:#c04048
+                        style D fill:#f8f9fa,stroke:#c04048
+                        style E fill:#f8f9fa,stroke:#c04048
                 </div>
             </section>
 
