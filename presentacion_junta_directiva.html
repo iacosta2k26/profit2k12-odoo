@@ -8,49 +8,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css" id="theme">
     <style>
-        .reveal h2 { color: #2c3e50; font-size: 1.5em; font-weight: bold; }
-        .reveal h3 { color: #34495e; font-size: 1.2em; }
+        .reveal h2 { color: #1a1a1a; font-size: 1.5em; font-weight: bold; }
+        .reveal h3 { color: #c04048; font-size: 1.2em; }
         .reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; text-align: left; }
         .reveal ul { display: block; margin-left: 2em; }
-        .flex-container { display: flex; justify-content: space-around; align-items: center; margin-top: 20px;}
-        .card { padding: 20px; border-radius: 8px; background: #f8f9fa; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); width: 42%; text-align: center; }
-        .card h3, .card h4 { margin-top: 0; }
-        .card p { text-align: center; font-size: 0.75em; }
-        .highlight { color: #e74c3c; font-weight: bold; }
-        .canvas-container { position: relative; height: 350px; width: 90%; margin: 20px auto 0 auto; }
+        .flex-container { display: flex; justify-content: space-around; align-items: stretch; margin-top: 20px; flex-wrap: wrap; gap: 15px; }
+        .card { padding: 20px; border-radius: 8px; background: #f8f9fa; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); width: 42%; text-align: center; box-sizing: border-box; }
+        .card h3, .card h4 { margin-top: 0; color: #c04048; }
+        .card p { text-align: center; font-size: 0.75em; color: #333; }
+        .highlight { color: #c04048; font-weight: bold; }
+        .canvas-container { position: relative; height: 350px; width: 100%; margin: 20px auto 0 auto; }
         
         /* Ajustes Mermaid */
-        .mermaid { margin-top: 20px; font-size: 0.7em; display: flex; justify-content: center; }
+        .mermaid { margin-top: 20px; font-size: 0.7em; display: flex; justify-content: center; width: 100%; overflow-x: auto; }
+        
+        /* Logo en las diapositivas */
+        .logo-header { position: absolute; top: 20px; right: 20px; width: 80px; z-index: 100; }
+        .logo-cover { width: 150px; margin-bottom: 20px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card { width: 100%; margin-bottom: 10px; }
+            .reveal h2 { font-size: 1.2em; }
+            .reveal p, .reveal li { font-size: 0.75em; }
+            .canvas-container { height: 250px; }
+            .flex-container { gap: 10px; }
+            .logo-header { width: 50px; top: 10px; right: 10px; }
+        }
     </style>
 </head>
 <body>
+    <!-- Logo flotante en todas las diapositivas menos la primera -->
+    <div style="position: absolute; width: 100%; top: 0; left: 0; z-index: 10;">
+        <img src="images/photo-1791460612-1.jpg" class="logo-header" alt="Logo de la Empresa" />
+    </div>
+
     <div class="reveal">
         <div class="slides">
             
             <!-- Diapositiva 1: Portada -->
             <section>
-                <h2 style="font-size: 1.8em; margin-bottom: 0.5em;">Estrategia e Integración Tecnológica:<br><span style="color: #2980b9;">Odoo POS + Profit Plus 2k12</span></h2>
-                <hr style="width: 50%; border-color: #2980b9; margin-bottom: 1em;">
+                <img src="images/photo-1791460612-1.jpg" class="logo-cover" alt="Logo de la Empresa" />
+                <h2 style="font-size: 1.8em; margin-bottom: 0.5em;">Estrategia e Integración Tecnológica:<br><span style="color: #c04048;">Odoo POS + Profit Plus 2k12</span></h2>
+                <hr style="width: 50%; border-color: #c04048; margin-bottom: 1em;">
                 <p style="text-align: center; font-size: 1.1em; color: #555;"><em>Una inversión sostenible, escalable y protegida a largo plazo.</em></p>
                 <br><br>
-                <p style="text-align: center;"><small>Presentado a:<br><strong style="font-size: 1.2em; color: #2c3e50;">Junta Directiva y Dueños de la Empresa</strong></small></p>
+                <p style="text-align: center;"><small>Presentado a:<br><strong style="font-size: 1.2em; color: #1a1a1a;">Junta Directiva y Dueños de la Empresa</strong></small></p>
             </section>
 
             <!-- Diapositiva 2: La Estrategia General -->
             <section>
                 <h2>La Estrategia General <br><span style="font-size: 0.8em; color: #7f8c8d;">(El Modelo Híbrido)</span></h2>
                 <div class="flex-container">
-                    <div class="card" style="background:#e3f2fd;">
-                        <h3 style="color: #1565c0;">Profit Plus 2k12</h3>
+                    <div class="card" style="background:#fcf1f1;">
+                        <h3 style="color: #c04048;">Profit Plus 2k12</h3>
                         <p><strong>Core Administrativo/Fiscal</strong><br>El motor central probado, robusto y adaptado a las normativas legales y contables.</p>
                     </div>
                     <div style="font-size: 2.5em; color:#bdc3c7;">⇄</div>
-                    <div class="card" style="background:#e8f5e9;">
-                        <h3 style="color: #2e7d32;">Odoo POS</h3>
+                    <div class="card" style="background:#f8f9fa;">
+                        <h3 style="color: #1a1a1a;">Odoo POS</h3>
                         <p><strong>Punto de Venta Dinámico</strong><br>La interfaz moderna, rápida e intuitiva para la atención y cobro al cliente.</p>
                     </div>
                 </div>
-                <div style="margin-top:30px; padding: 15px; background: #fff3e0; border-left: 5px solid #ff9800; border-radius: 4px;">
+                <div style="margin-top:30px; padding: 15px; background: #fff5f5; border-left: 5px solid #c04048; border-radius: 4px;">
                     <p style="margin: 0;"><strong>🛡️ Protección de la Inversión:</strong> Combinación de plataformas consolidadas con abundante personal técnico y operativo en el mercado laboral (sin dependencia de proveedores únicos).</p>
                 </div>
             </section>
@@ -124,13 +144,13 @@
             <section>
                 <h2>Conclusión</h2>
                 <div class="flex-container">
-                    <div class="card" style="background:#2c3e50; color:white; width:45%;">
+                    <div class="card" style="background:#1a1a1a; color:white; width:45%;">
                         <h3 style="color:#ecf0f1;">🛡️ Inversión Definitiva</h3>
                         <p style="color:#bdc3c7; font-size:0.9em;">Solución sólida que combina la mejor tecnología del mercado con un bajísimo riesgo operativo a largo plazo.</p>
                     </div>
-                    <div class="card" style="background:#27ae60; color:white; width:45%;">
+                    <div class="card" style="background:#c04048; color:white; width:45%;">
                         <h3 style="color:#ecf0f1;">📊 Control Total</h3>
-                        <p style="color:#bdc3c7; font-size:0.9em;">Garantía de resguardo patrimonial, trazabilidad exhaustiva de inventarios y flujo de caja transparente.</p>
+                        <p style="color:#fcf1f1; font-size:0.9em;">Garantía de resguardo patrimonial, trazabilidad exhaustiva de inventarios y flujo de caja transparente.</p>
                     </div>
                 </div>
                 <h3 style="margin-top: 50px; font-style: italic; color:#7f8c8d; text-align: center;">¿Preguntas?</h3>
@@ -168,8 +188,8 @@
                                 {
                                     label: 'Software Tradicional (Costo x Usuario)',
                                     data: [100, 160, 230, 310, 400],
-                                    borderColor: '#e74c3c',
-                                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                                    borderColor: '#1a1a1a',
+                                    backgroundColor: 'rgba(26, 26, 26, 0.1)',
                                     borderWidth: 2,
                                     fill: true,
                                     tension: 0.3
@@ -177,7 +197,7 @@
                                 {
                                     label: 'Modelo Odoo + Profit (Costo Fijo Ilimitado)',
                                     data: [120, 120, 120, 120, 120],
-                                    borderColor: '#2ecc71',
+                                    borderColor: '#c04048',
                                     backgroundColor: 'transparent',
                                     borderWidth: 4,
                                     fill: false,
