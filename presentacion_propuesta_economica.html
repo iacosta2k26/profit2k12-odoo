@@ -8,40 +8,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css" id="theme">
     <style>
-        .reveal h2 { color: #1a1a1a; font-size: 1.5em; font-weight: bold; }
-        .reveal h3 { color: #c04048; font-size: 1.2em; }
-        .reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; text-align: left; }
+        .reveal h2 { color: #1a1a1a; font-size: 1.45em; font-weight: bold; margin-bottom: 0.3em; }
+        .reveal h3 { color: #c04048; font-size: 1.15em; }
+        .reveal p, .reveal li { font-size: 0.82em; line-height: 1.38; text-align: left; }
         .reveal ul { display: block; margin-left: 2em; }
         .flex-container { display: flex; justify-content: space-around; align-items: stretch; margin-top: 15px; flex-wrap: wrap; gap: 12px; }
-        .card { padding: 18px; border-radius: 8px; background: #f8f9fa; box-shadow: 2px 2px 10px rgba(0,0,0,0.08); width: 42%; text-align: center; box-sizing: border-box; }
+        .card { padding: 16px; border-radius: 8px; background: #f8f9fa; box-shadow: 2px 2px 10px rgba(0,0,0,0.08); width: 42%; text-align: center; box-sizing: border-box; }
         .card h3, .card h4 { margin-top: 0; color: #c04048; }
-        .card p { text-align: center; font-size: 0.75em; color: #333; }
+        .card p { text-align: center; font-size: 0.74em; color: #333; }
         .highlight { color: #c04048; font-weight: bold; }
-        .canvas-container { position: relative; height: 310px; width: 100%; margin: 15px auto 0 auto; }
+        .canvas-container { position: relative; height: 300px; width: 100%; margin: 10px auto 0 auto; }
         
         /* Tablas con el estilo corporativo */
-        .proposal-table { width: 100%; border-collapse: collapse; margin-top: 12px; margin-bottom: 12px; font-size: 0.78em; }
-        .proposal-table th, .proposal-table td { border: 1px solid #e0e0e0; padding: 9px 14px; text-align: left; }
+        .proposal-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 8px; font-size: 0.75em; }
+        .proposal-table th, .proposal-table td { border: 1px solid #e0e0e0; padding: 7px 12px; text-align: left; }
         .proposal-table th { background-color: #1a1a1a; color: white; font-weight: 600; }
         .proposal-table tr.total-row { background-color: #fcf1f1; font-weight: bold; }
-        .proposal-table tr.total-row td { color: #c04048; font-size: 1.08em; border-top: 2px solid #c04048; }
+        .proposal-table tr.total-row td { color: #c04048; font-size: 1.05em; border-top: 2px solid #c04048; }
+
+        /* Contenedor específico para hitos (Diapositiva 5) para que NUNCA se corten */
+        .milestones-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+        .milestone-box {
+            flex: 1 1 0;
+            min-width: 0;
+            padding: 14px 10px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .milestone-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            padding: 0 2px;
+        }
 
         /* Badges de precios */
-        .price-badge { display: inline-block; background-color: #c04048; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.88em; }
-        .price-badge-dark { display: inline-block; background-color: #1a1a1a; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.88em; }
+        .price-badge { display: inline-block; background-color: #c04048; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.82em; }
+        .price-badge-dark { display: inline-block; background-color: #1a1a1a; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.82em; }
 
         /* Logo en las diapositivas */
-        .logo-header { position: absolute; top: 20px; right: 20px; width: 80px; z-index: 100; }
-        .logo-cover { width: 150px; margin-bottom: 20px; }
+        .logo-header { position: absolute; top: 15px; right: 20px; width: 75px; z-index: 100; }
+        .logo-cover { width: 140px; margin-bottom: 15px; }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .card { width: 100%; margin-bottom: 10px; }
             .reveal h2 { font-size: 1.2em; }
-            .reveal p, .reveal li { font-size: 0.75em; }
-            .canvas-container { height: 230px; }
-            .flex-container { gap: 10px; }
-            .logo-header { width: 50px; top: 10px; right: 10px; }
+            .reveal p, .reveal li { font-size: 0.72em; }
+            .canvas-container { height: 210px; }
+            .milestones-container { flex-direction: column; gap: 8px; }
+            .milestone-arrow { transform: rotate(90deg); margin: 4px 0; }
+            .logo-header { width: 45px; top: 10px; right: 10px; }
         }
     </style>
 </head>
@@ -57,9 +89,9 @@
             <!-- Diapositiva 1: Portada -->
             <section>
                 <img src="images/photo-1791460612-1.jpg" class="logo-cover" alt="Logo de la Empresa" onerror="this.style.display='none'" />
-                <h2 style="font-size: 1.8em; margin-bottom: 0.5em;">Propuesta Económica: <span style="color: #c04048;">Fase Piloto</span></h2>
+                <h2 style="font-size: 1.8em; margin-bottom: 0.4em;">Propuesta Económica: <span style="color: #c04048;">Fase Piloto</span></h2>
                 <h3 style="color: #1a1a1a; font-size: 1.1em; font-weight: normal; margin-top: 0;">Integración Tecnológica: <strong>Odoo POS + Profit Plus 2k12</strong></h3>
-                <hr style="width: 50%; border-color: #c04048; margin-bottom: 1em;">
+                <hr style="width: 50%; border-color: #c04048; margin-bottom: 0.8em;">
                 <p style="text-align: center; font-size: 1.05em; color: #555;"><em>Inversión predecible, escalable y con retorno directo en eficiencia operativa.</em></p>
                 <br>
                 <p style="text-align: center;"><small>Presentado a:<br><strong style="font-size: 1.2em; color: #1a1a1a;">Junta Directiva y Dueños de la Empresa</strong></small></p>
@@ -71,27 +103,27 @@
                 <div class="flex-container">
                     <!-- Servidor Profit Matriz -->
                     <div class="card" style="background:#fcf1f1; border-top: 4px solid #c04048; width: 31%;">
-                        <h4 style="color: #c04048; margin-bottom: 8px;">Servidor Profit<br><small style="color:#666;">Sede Principal (Matriz)</small></h4>
-                        <div style="margin: 8px 0;"><span class="price-badge">600,00 €</span></div>
+                        <h4 style="color: #c04048; margin-bottom: 6px;">Servidor Profit<br><small style="color:#666;">Sede Principal (Matriz)</small></h4>
+                        <div style="margin: 6px 0;"><span class="price-badge">600,00 €</span></div>
                         <p style="font-size: 0.72em; line-height: 1.35;">Adecuación del servidor central, configuración de base de datos Profit, middleware y red VPN segura (ZeroTier).</p>
                     </div>
 
                     <!-- Implementación Sede Piloto -->
                     <div class="card" style="background:#f8f9fa; border-top: 4px solid #1a1a1a; width: 31%;">
-                        <h4 style="color: #1a1a1a; margin-bottom: 8px;">Sede Piloto POS<br><small style="color:#666;">Primera Panadería</small></h4>
-                        <div style="margin: 8px 0;"><span class="price-badge-dark">600,00 €</span></div>
+                        <h4 style="color: #1a1a1a; margin-bottom: 6px;">Sede Piloto POS<br><small style="color:#666;">Primera Panadería</small></h4>
+                        <div style="margin: 6px 0;"><span class="price-badge-dark">600,00 €</span></div>
                         <p style="font-size: 0.72em; line-height: 1.35;">Configuración integral, base de datos local Odoo, adecuación de servidor de tienda y enlace seguro VPN.</p>
                     </div>
 
                     <!-- Periféricos -->
                     <div class="card" style="background:#f8f9fa; border-top: 4px solid #7f8c8d; width: 31%;">
-                        <h4 style="color: #333; margin-bottom: 8px;">Periféricos<br><small style="color:#666;">Hardware en Sitio</small></h4>
-                        <div style="margin: 8px 0;"><span class="price-badge-dark" style="background:#4b5563;">35,00 € / Hora</span></div>
+                        <h4 style="color: #333; margin-bottom: 6px;">Periféricos<br><small style="color:#666;">Hardware en Sitio</small></h4>
+                        <div style="margin: 6px 0;"><span class="price-badge-dark" style="background:#4b5563;">35,00 € / Hora</span></div>
                         <p style="font-size: 0.72em; line-height: 1.35;">Instalación y puesta a punto de hardware (promedio 2 impresoras fiscales/comanderas). Por tiempo efectivo.</p>
                     </div>
                 </div>
-                <div style="margin-top:20px; padding: 10px 16px; background: #fff5f5; border-left: 5px solid #c04048; border-radius: 4px;">
-                    <p style="margin: 0; font-size: 0.78em;"><strong>🎯 Alta Disponibilidad:</strong> Conexión cifrada punto a punto entre la Central y la sucursal, con total tolerancia a caídas de internet (modo offline autónomo en cajas).</p>
+                <div style="margin-top:16px; padding: 10px 14px; background: #fff5f5; border-left: 5px solid #c04048; border-radius: 4px;">
+                    <p style="margin: 0; font-size: 0.76em;"><strong>🎯 Alta Disponibilidad:</strong> Conexión cifrada punto a punto entre la Central y la sucursal, con total tolerancia a caídas de internet (modo offline autónomo en cajas).</p>
                 </div>
             </section>
 
@@ -101,7 +133,7 @@
                 <div class="flex-container" style="align-items: center; margin-top: 5px;">
                     <!-- Lista de detalles -->
                     <div style="width: 52%; text-align: left;">
-                        <ul style="font-size: 0.8em; line-height: 1.45; margin-left: 1.2em;">
+                        <ul style="font-size: 0.78em; line-height: 1.42; margin-left: 1.2em;">
                             <li><strong>Inversión Total del Paquete:</strong> <span class="highlight">3.500,00 €</span> (Tarifa preferencial: 35,00 €/h).</li>
                             <li><strong>Desarrollo Base Odoo (40 hrs):</strong> Multimoneda, roles estrictos con claves de supervisor, bloqueo de texto libre y reportes por fecha.</li>
                             <li><strong>Puente Central Profit (20-30 hrs):</strong> Sincronización unidireccional automática de artículos y precios fijos matriz ➔ sucursal.</li>
@@ -110,7 +142,7 @@
                     </div>
                     <!-- Gráfico Doughnut de distribución -->
                     <div style="width: 44%;">
-                        <div class="canvas-container" style="height: 250px;">
+                        <div class="canvas-container" style="height: 240px;">
                             <canvas id="hoursDistributionChart"></canvas>
                         </div>
                     </div>
@@ -153,50 +185,66 @@
                             <td>
                                 <strong>TOTAL INVERSIÓN INICIAL ESTIMADA*</strong>
                             </td>
-                            <td style="text-align: right; font-size: 1.2em;">
+                            <td style="text-align: right; font-size: 1.15em;">
                                 <strong>4.700,00 €</strong>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="font-size: 0.72em; color: #666; font-style: italic; margin-top: 4px;">* A este total se sumarán únicamente las horas exactas que tome la calibración física del hardware en sede (35,00 €/h).</p>
-                <div style="margin-top:12px; padding: 10px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0; text-align: center;">
-                    <p style="margin: 0; font-size: 0.78em; text-align: center;"><strong>💡 Escalabilidad Futura:</strong> Las siguientes sucursales <u>no pagan horas de desarrollo ni servidor matriz</u>; solo su tarifa fija local de 600,00 € y sus periféricos.</p>
+                <p style="font-size: 0.68em; color: #666; font-style: italic; margin: 4px 0 8px 0;">* A este total se sumarán únicamente las horas exactas que tome la calibración física del hardware en sede (35,00 €/h).</p>
+                
+                <!-- Nota de Escalabilidad Futura bien visible -->
+                <div style="margin-top: 8px; padding: 10px 14px; background: #f8f9fa; border-radius: 6px; border: 1px solid #d1d5db; text-align: left;">
+                    <p style="margin: 0; font-size: 0.78em; color: #1a1a1a; line-height: 1.4;">
+                        <strong>💡 Escalabilidad Futura:</strong> Las siguientes sucursales <u>no pagan horas de desarrollo</u>; solo la tarifa fija de 600,00 € y sus periféricos.
+                    </p>
                 </div>
             </section>
 
-            <!-- Diapositiva 5: Esquema de Pagos por Hitos -->
+            <!-- Diapositiva 5: Esquema de Pagos por Hitos (Los 3 hitos 100% visibles) -->
             <section>
                 <h2>4. Esquema de Pagos por Hitos</h2>
-                <p style="text-align: center; font-size: 0.82em; color: #555; margin-bottom: 20px;">Flujo de pagos seguro condicionado a entregables técnicos tangibles y verificables:</p>
+                <p style="text-align: center; font-size: 0.8em; color: #555; margin-bottom: 12px;">Flujo de pagos seguro condicionado a entregables técnicos tangibles y verificables:</p>
                 
-                <div class="flex-container" style="align-items: stretch; justify-content: center; gap: 10px;">
-                    <!-- Hito 1 -->
-                    <div style="background:#f8f9fa; padding:15px; border-radius:8px; border-top:4px solid #1a1a1a; width:28%; box-sizing:border-box; text-align:center;">
-                        <span class="price-badge-dark" style="font-size:0.78em;">50% Anticipo</span>
-                        <h4 style="margin: 8px 0 4px 0; color:#1a1a1a; font-size:0.95em;">Inicio de Proyecto</h4>
-                        <p style="font-size:0.72em; color:#444; margin: 0; line-height: 1.35;">Para iniciar la configuración del servidor, red ZeroTier y comenzar el consumo de horas de desarrollo base en Odoo (multimoneda, bloqueos, roles).</p>
-                        <p style="font-weight:bold; color:#1a1a1a; font-size:0.95em; margin-top:10px;">2.350,00 €</p>
+                <div class="milestones-container">
+                    <!-- Hito 1: 50% -->
+                    <div class="milestone-box" style="background:#f8f9fa; border-top:4px solid #1a1a1a;">
+                        <div>
+                            <span class="price-badge-dark">50% Anticipo</span>
+                            <h4 style="margin: 8px 0 4px 0; color:#1a1a1a; font-size:0.88em;">Inicio de Proyecto</h4>
+                            <p style="font-size:0.7em; color:#444; margin: 0; line-height: 1.3;">Para iniciar la configuración del servidor, red ZeroTier y comenzar el consumo de horas de desarrollo base en Odoo (multimoneda, bloqueos, roles).</p>
+                        </div>
+                        <div style="margin-top: 10px; border-top: 1px dashed #ccc; padding-top: 6px;">
+                            <span style="font-weight:bold; color:#1a1a1a; font-size:0.95em;">2.350,00 €</span>
+                        </div>
                     </div>
 
-                    <div style="font-size:1.6em; color:#c04048; align-self: center;">➔</div>
+                    <div class="milestone-arrow" style="color:#c04048;">➔</div>
 
-                    <!-- Hito 2 -->
-                    <div style="background:#fcf1f1; padding:15px; border-radius:8px; border-top:4px solid #c04048; width:28%; box-sizing:border-box; text-align:center;">
-                        <span class="price-badge" style="font-size:0.78em;">30% Instalación Piloto</span>
-                        <h4 style="margin: 8px 0 4px 0; color:#c04048; font-size:0.95em;">Encendido en Sede</h4>
-                        <p style="font-size:0.72em; color:#444; margin: 0; line-height: 1.35;">Al momento de encender el sistema en la primera panadería, conectar las impresoras y realizar la primera prueba de venta real.</p>
-                        <p style="font-weight:bold; color:#c04048; font-size:0.95em; margin-top:10px;">1.410,00 €</p>
+                    <!-- Hito 2: 30% -->
+                    <div class="milestone-box" style="background:#fcf1f1; border-top:4px solid #c04048;">
+                        <div>
+                            <span class="price-badge">30% Instalación Piloto</span>
+                            <h4 style="margin: 8px 0 4px 0; color:#c04048; font-size:0.88em;">Encendido en Sede</h4>
+                            <p style="font-size:0.7em; color:#444; margin: 0; line-height: 1.3;">Al momento de encender el sistema en la primera panadería, conectar las impresoras y realizar la primera prueba de venta real.</p>
+                        </div>
+                        <div style="margin-top: 10px; border-top: 1px dashed #e8b4b8; padding-top: 6px;">
+                            <span style="font-weight:bold; color:#c04048; font-size:0.95em;">1.410,00 €</span>
+                        </div>
                     </div>
 
-                    <div style="font-size:1.6em; color:#1a1a1a; align-self: center;">➔</div>
+                    <div class="milestone-arrow" style="color:#1a1a1a;">➔</div>
 
-                    <!-- Hito 3 -->
-                    <div style="background:#1a1a1a; padding:15px; border-radius:8px; border-top:4px solid #c04048; width:28%; box-sizing:border-box; text-align:center; color:white;">
-                        <span style="background-color:#c04048; color:white; padding:3px 7px; border-radius:4px; font-weight:bold; font-size:0.78em;">20% Contra Entrega</span>
-                        <h4 style="margin: 8px 0 4px 0; color:white; font-size:0.95em;">Arranque Aprobado</h4>
-                        <p style="font-size:0.72em; color:#ccc; margin: 0; line-height: 1.35;">Tras finalizar la inducción al personal, verificar la sincronización unidireccional de precios desde la central y dar por aprobado el funcionamiento fluido de la caja operativa.</p>
-                        <p style="font-weight:bold; color:#fcf1f1; font-size:0.95em; margin-top:10px;">940,00 €</p>
+                    <!-- Hito 3: 20% (Contra Entrega y Arranque) -->
+                    <div class="milestone-box" style="background:#1a1a1a; border-top:4px solid #c04048; color:white;">
+                        <div>
+                            <span style="background-color:#c04048; color:white; padding:3px 8px; border-radius:4px; font-weight:bold; font-size:0.82em;">20% Contra Entrega</span>
+                            <h4 style="margin: 8px 0 4px 0; color:white; font-size:0.88em;">Arranque Aprobado</h4>
+                            <p style="font-size:0.7em; color:#ccc; margin: 0; line-height: 1.3;">Tras finalizar la inducción al personal, verificar la sincronización unidireccional de precios desde la central y dar por aprobado el funcionamiento fluido de la caja operativa.</p>
+                        </div>
+                        <div style="margin-top: 10px; border-top: 1px dashed #555; padding-top: 6px;">
+                            <span style="font-weight:bold; color:#fcf1f1; font-size:0.95em;">940,00 €</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -216,7 +264,7 @@
                 <div class="flex-container">
                     <div class="card" style="background:#1a1a1a; color:white; width:45%;">
                         <h3 style="color:#ecf0f1;">🛡️ Inversión Protegida</h3>
-                        <p style="color:#bdc3c7; font-size:0.85em; text-align: left;">
+                        <p style="color:#bdc3c7; font-size:0.82em; text-align: left;">
                             • Sin costos ocultos ni licencias por usuario.<br>
                             • Pagos condicionados a hitos 100% operativos.<br>
                             • Servidor matriz y puente bajo control absoluto de la empresa.
@@ -224,14 +272,14 @@
                     </div>
                     <div class="card" style="background:#c04048; color:white; width:45%;">
                         <h3 style="color:#ecf0f1;">🚀 Despliegue Rápido</h3>
-                        <p style="color:#fcf1f1; font-size:0.85em; text-align: left;">
+                        <p style="color:#fcf1f1; font-size:0.82em; text-align: left;">
                             • Activación inmediata tras aprobación directiva.<br>
                             • Acompañamiento presencial durante el arranque.<br>
                             • Plataforma lista para abrir sucursales adicionales a solo 600 €.
                         </p>
                     </div>
                 </div>
-                <h3 style="margin-top: 40px; font-style: italic; color:#7f8c8d; text-align: center;">¿Preguntas o comentarios para dar inicio?</h3>
+                <h3 style="margin-top: 35px; font-style: italic; color:#7f8c8d; text-align: center;">¿Preguntas o comentarios para dar inicio?</h3>
             </section>
 
         </div>
@@ -245,7 +293,10 @@
         Reveal.initialize({
             hash: true,
             transition: 'slide',
-            slideNumber: 'c/t'
+            slideNumber: 'c/t',
+            width: 1050,
+            height: 700,
+            margin: 0.04
         });
 
         Reveal.on('slidechanged', event => {
