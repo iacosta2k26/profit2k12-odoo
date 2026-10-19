@@ -99,10 +99,9 @@
                 <h2>2. Desarrollo, Integración e Inducción <br><span style="font-size: 0.8em; color: #7f8c8d;">(Bolsa Prepagada de 100 Horas)</span></h2>
                 <div class="flex-container" style="align-items: center; margin-top: 4px;">
                     <div style="width: 52%; text-align: left;">
-                        <ul style="font-size: 0.76em; line-height: 1.4; margin-left: 1.2em;">
+                        <ul style="font-size: 0.74em; line-height: 1.4; margin-left: 1.2em;">
                             <li><strong>Inversión Total del Paquete:</strong> <span class="highlight">3.500,00 €</span> (Tarifa preferencial: 35,00 €/h).</li>
-                            <li><strong>Desarrollo Base Odoo (40 hrs):</strong> Multimoneda, roles estrictos con supervisores, bloqueo de texto libre y reportes.</li>
-                            <li><strong>Puente Central Profit (20-30 hrs):</strong> Sincronización unidireccional automática de artículos y precios fijos matriz ➔ sucursal.</li>
+                            <li><strong>Desarrollo Base Odoo (40 hrs):</strong> Multimoneda, impresoras, roles estrictos de usuarios, restricción de formatos en campos de texto, reportes administrativos de cierra de caja y banco, sincronización unidireccional de artículos y precios matriz ➔ sucursal.</li>
                             <li><strong>Inducción y Soporte (Saldo restante):</strong> Capacitación in-situ al personal y soporte post-arranque.</li>
                         </ul>
                     </div>
@@ -273,10 +272,10 @@
                     window.hoursChartInstance = new Chart(ctxHours, {
                         type: 'doughnut',
                         data: {
-                            labels: ['Desarrollo Base Odoo (40h)', 'Puente Central Profit (25h)', 'Inducción y Soporte (35h)'],
+                            labels: ['Desarrollo Base Odoo (40h)', 'Inducción y Soporte (60h)'],
                             datasets: [{
-                                data: [40, 25, 35],
-                                backgroundColor: ['#c04048', '#1a1a1a', '#7f8c8d'],
+                                data: [40, 60],
+                                backgroundColor: ['#c04048', '#1a1a1a'],
                                 borderWidth: 2,
                                 borderColor: '#ffffff'
                             }]
