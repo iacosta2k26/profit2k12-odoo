@@ -26,46 +26,37 @@
         .proposal-table tr.total-row { background-color: #fcf1f1; font-weight: bold; }
         .proposal-table tr.total-row td { color: #c04048; font-size: 1.05em; border-top: 2px solid #c04048; }
 
-        /* Contenedor específico para hitos (Diapositiva 5) - Compacto y verticalmente contenido */
-        .milestones-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: stretch;
-            justify-content: space-between;
-            gap: 10px;
-            width: 100%;
-            margin-top: 10px;
-            box-sizing: border-box;
-        }
-        .milestone-box {
-            flex: 1 1 0;
-            min-width: 0;
-            padding: 10px 10px;
-            border-radius: 8px;
-            box-sizing: border-box;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .milestone-box p {
-            font-size: 0.65em !important;
-            line-height: 1.25 !important;
-            margin: 4px 0 0 0 !important;
-            text-align: center !important;
-        }
-        .milestone-arrow {
+        /* Filas Horizontales para Hitos (Diapositiva 5) - Espacioso, Cómodo y sin desbordes */
+        .milestone-row {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.3em;
-            padding: 0;
+            border-radius: 8px;
+            padding: 12px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .milestone-meta {
+            min-width: 160px;
+            text-align: left;
+            flex-shrink: 0;
+        }
+        .milestone-desc {
+            text-align: left;
+            padding-left: 20px;
+            border-left: 2px solid rgba(0,0,0,0.08);
+            flex: 1;
+        }
+        .milestone-desc p {
+            margin: 3px 0 0 0 !important;
+            font-size: 0.78em !important;
+            line-height: 1.35 !important;
         }
 
         /* Badges de precios */
-        .price-badge { display: inline-block; background-color: #c04048; color: white; padding: 2px 7px; border-radius: 4px; font-weight: bold; font-size: 0.78em; }
-        .price-badge-dark { display: inline-block; background-color: #1a1a1a; color: white; padding: 2px 7px; border-radius: 4px; font-weight: bold; font-size: 0.78em; }
+        .price-badge { display: inline-block; background-color: #c04048; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.82em; }
+        .price-badge-dark { display: inline-block; background-color: #1a1a1a; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.82em; }
 
         /* Logo en las diapositivas */
         .logo-header { position: absolute; top: 12px; right: 18px; width: 70px; z-index: 100; }
@@ -77,8 +68,8 @@
             .reveal h2 { font-size: 1.15em; }
             .reveal p, .reveal li { font-size: 0.7em; }
             .canvas-container { height: 200px; }
-            .milestones-container { flex-direction: column; gap: 6px; }
-            .milestone-arrow { transform: rotate(90deg); margin: 2px 0; }
+            .milestone-row { flex-direction: column; align-items: flex-start; padding: 10px; }
+            .milestone-desc { border-left: none; padding-left: 0; margin-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 6px; }
             .logo-header { width: 40px; top: 8px; right: 8px; }
         }
     </style>
@@ -197,7 +188,6 @@
                 </table>
                 <p style="font-size: 0.66em; color: #666; font-style: italic; margin: 3px 0 6px 0;">* A este total se sumarán únicamente las horas exactas que tome la calibración física del hardware en sede (35,00 €/h).</p>
                 
-                <!-- Nota de Escalabilidad Futura incorporada y 100% visible -->
                 <div style="margin-top: 6px; padding: 8px 12px; background: #f8f9fa; border-radius: 6px; border: 1px solid #d1d5db; text-align: left;">
                     <p style="margin: 0; font-size: 0.76em; color: #1a1a1a; line-height: 1.35;">
                         <strong>💡 Escalabilidad Futura:</strong> Las siguientes sucursales <u>no pagan horas de desarrollo</u>; solo la tarifa fija de 600,00 € y sus periféricos.
@@ -205,51 +195,49 @@
                 </div>
             </section>
 
-            <!-- Diapositiva 5: Esquema de Pagos por Hitos (Perfectamente contenido dentro del margen) -->
+            <!-- Diapositiva 5: Esquema de Pagos por Hitos (Diseño Horizontal Holgado y 100% Legible) -->
             <section>
-                <h2 style="margin-bottom: 0.15em;">4. Esquema de Pagos por Hitos</h2>
-                <p style="text-align: center; font-size: 0.74em; color: #555; margin: 0 auto 8px auto;">Flujo de pagos seguro condicionado a entregables técnicos tangibles y verificables:</p>
+                <h2>4. Esquema de Pagos por Hitos</h2>
+                <p style="text-align: center; font-size: 0.82em; color: #555; margin: 0 auto 15px auto;">Flujo de pagos seguro condicionado a entregables técnicos tangibles y verificables:</p>
                 
-                <div class="milestones-container">
-                    <!-- Hito 1: 50% -->
-                    <div class="milestone-box" style="background:#f8f9fa; border-top:4px solid #1a1a1a;">
-                        <div>
+                <div style="width: 100%; max-width: 950px; margin: 0 auto;">
+                    
+                    <!-- Fila Hito 1: 50% -->
+                    <div class="milestone-row" style="background:#f8f9fa; border-left: 5px solid #1a1a1a;">
+                        <div class="milestone-meta">
                             <span class="price-badge-dark">50% Anticipo</span>
-                            <h4 style="margin: 4px 0 2px 0; color:#1a1a1a; font-size:0.82em;">Inicio de Proyecto</h4>
-                            <p>Para iniciar la configuración del servidor, red ZeroTier y comenzar el consumo de horas de desarrollo base en Odoo (multimoneda, bloqueos, roles).</p>
+                            <div style="font-weight:bold; color:#1a1a1a; font-size:1.15em; margin-top:3px;">2.350,00 €</div>
                         </div>
-                        <div style="margin-top: 6px; border-top: 1px dashed #ccc; padding-top: 4px;">
-                            <span style="font-weight:bold; color:#1a1a1a; font-size:0.9em;">2.350,00 €</span>
-                        </div>
-                    </div>
-
-                    <div class="milestone-arrow" style="color:#c04048;">➔</div>
-
-                    <!-- Hito 2: 30% -->
-                    <div class="milestone-box" style="background:#fcf1f1; border-top:4px solid #c04048;">
-                        <div>
-                            <span class="price-badge">30% Instalación Piloto</span>
-                            <h4 style="margin: 4px 0 2px 0; color:#c04048; font-size:0.82em;">Encendido en Sede</h4>
-                            <p>Al momento de encender el sistema en la primera panadería, conectar las impresoras y realizar la primera prueba de venta real.</p>
-                        </div>
-                        <div style="margin-top: 6px; border-top: 1px dashed #e8b4b8; padding-top: 4px;">
-                            <span style="font-weight:bold; color:#c04048; font-size:0.9em;">1.410,00 €</span>
+                        <div class="milestone-desc">
+                            <strong style="color:#1a1a1a; font-size:0.88em;">Inicio de Proyecto:</strong>
+                            <p style="color:#333;">Para iniciar la configuración del servidor, red ZeroTier y comenzar el consumo de horas de desarrollo base en Odoo (multimoneda, bloqueos, roles).</p>
                         </div>
                     </div>
 
-                    <div class="milestone-arrow" style="color:#1a1a1a;">➔</div>
-
-                    <!-- Hito 3: 20% -->
-                    <div class="milestone-box" style="background:#1a1a1a; border-top:4px solid #c04048; color:white;">
-                        <div>
-                            <span style="background-color:#c04048; color:white; padding:2px 7px; border-radius:4px; font-weight:bold; font-size:0.78em;">20% Contra Entrega</span>
-                            <h4 style="margin: 4px 0 2px 0; color:white; font-size:0.82em;">Arranque Aprobado</h4>
-                            <p style="color:#ccc !important;">Tras finalizar la inducción al personal, verificar la sincronización unidireccional de precios desde la central y dar por aprobado el funcionamiento fluido de la caja operativa.</p>
+                    <!-- Fila Hito 2: 30% -->
+                    <div class="milestone-row" style="background:#fcf1f1; border-left: 5px solid #c04048;">
+                        <div class="milestone-meta">
+                            <span class="price-badge">30% Instalación</span>
+                            <div style="font-weight:bold; color:#c04048; font-size:1.15em; margin-top:3px;">1.410,00 €</div>
                         </div>
-                        <div style="margin-top: 6px; border-top: 1px dashed #555; padding-top: 4px;">
-                            <span style="font-weight:bold; color:#fcf1f1; font-size:0.9em;">940,00 €</span>
+                        <div class="milestone-desc" style="border-left-color: #e8b4b8;">
+                            <strong style="color:#c04048; font-size:0.88em;">Instalación del Piloto:</strong>
+                            <p style="color:#333;">Al momento de encender el sistema en la primera panadería, conectar las impresoras y realizar la primera prueba de venta real.</p>
                         </div>
                     </div>
+
+                    <!-- Fila Hito 3: 20% -->
+                    <div class="milestone-row" style="background:#1a1a1a; border-left: 5px solid #c04048; color:white;">
+                        <div class="milestone-meta">
+                            <span style="background-color:#c04048; color:white; padding:3px 8px; border-radius:4px; font-weight:bold; font-size:0.82em;">20% Contra Entrega</span>
+                            <div style="font-weight:bold; color:#fcf1f1; font-size:1.15em; margin-top:3px;">940,00 €</div>
+                        </div>
+                        <div class="milestone-desc" style="border-left-color: #444;">
+                            <strong style="color:#fff; font-size:0.88em;">Contra Entrega y Arranque:</strong>
+                            <p style="color:#e0e0e0 !important;">Tras finalizar la inducción al personal, verificar la sincronización unidireccional de precios desde la central y dar por aprobado el funcionamiento fluido de la caja operativa.</p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
