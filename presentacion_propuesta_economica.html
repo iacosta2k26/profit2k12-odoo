@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Propuesta Económica: Odoo POS + Profit Plus 2k12</title>
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css" id="theme">
+    <style>
+        .reveal h2 { color: #1a1a1a; font-size: 1.5em; font-weight: bold; }
+        .reveal h3 { color: #c04048; font-size: 1.2em; }
+        .reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; text-align: left; }
+        .reveal ul { display: block; margin-left: 2em; }
+        .flex-container { display: flex; justify-content: space-around; align-items: stretch; margin-top: 20px; flex-wrap: wrap; gap: 15px; }
+        .card { padding: 20px; border-radius: 8px; background: #f8f9fa; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); width: 42%; text-align: center; box-sizing: border-box; }
+        .card h3, .card h4 { margin-top: 0; color: #c04048; }
+        .card p { text-align: center; font-size: 0.75em; color: #333; }
+        .highlight { color: #c04048; font-weight: bold; }
+        .canvas-container { position: relative; height: 320px; width: 100%; margin: 15px auto 0 auto; }
+        
+        /* Tablas con el estilo corporativo */
+        .proposal-table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 15px; font-size: 0.8em; }
+        .proposal-table th, .proposal-table td { border: 1px solid #e0e0e0; padding: 10px 14px; text-align: left; }
+        .proposal-table th { background-color: #1a1a1a; color: white; font-weight: 600; }
+        .proposal-table tr.total-row { background-color: #fcf1f1; font-weight: bold; }
+        .proposal-table tr.total-row td { color: #c04048; font-size: 1.05em; border-top: 2px solid #c04048; }
+
+        /* Badges de precios */
+        .price-badge { display: inline-block; background-color: #c04048; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+        .price-badge-dark { display: inline-block; background-color: #1a1a1a; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+
+        /* Logo en las diapositivas */
+        .logo-header { position: absolute; top: 20px; right: 20px; width: 80px; z-index: 100; }
+        .logo-cover { width: 150px; margin-bottom: 20px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card { width: 100%; margin-bottom: 10px; }
+            .reveal h2 { font-size: 1.2em; }
+            .reveal p, .reveal li { font-size: 0.75em; }
+            .canvas-container { height: 230px; }
+            .flex-container { gap: 10px; }
+            .logo-header { width: 50px; top: 10px; right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo flotante en las diapositivas -->
+    <div style="position: absolute; width: 100%; top: 0; left: 0; z-index: 10;">
+        <img src="images/photo-1791460612-1.jpg" class="logo-header" alt="Logo de la Empresa" onerror="this.style.display='none'" />
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Diapositiva 1: Portada -->
+            <section>
+                <img src="images/photo-1791460612-1.jpg" class="logo-cover" alt="Logo de la Empresa" onerror="this.style.display='none'" />
+                <h2 style="font-size: 1.8em; margin-bottom: 0.5em;">Propuesta Económica: <span style="color: #c04048;">Fase Piloto</span></h2>
+                <h3 style="color: #1a1a1a; font-size: 1.1em; font-weight: normal; margin-top: 0;">Integración Tecnológica: <strong>Odoo POS + Profit Plus 2k12</strong></h3>
+                <hr style="width: 50%; border-color: #c04048; margin-bottom: 1em;">
+                <p style="text-align: center; font-size: 1.05em; color: #555;"><em>Inversión predecible, escalable y con retorno directo en eficiencia operativa.</em></p>
+                <br>
+                <p style="text-align: center;"><small>Presentado a:<br><strong style="font-size: 1.2em; color: #1a1a1a;">Junta Directiva y Dueños de la Empresa</strong></small></p>
+            </section>
+
+            <!-- Diapositiva 2: Despliegue de Infraestructura -->
+            <section>
+                <h2>1. Despliegue de Infraestructura <br><span style="font-size: 0.8em; color: #7f8c8d;">(Sede Piloto: Panadería)</span></h2>
+                <div class="flex-container">
+                    <div class="card" style="background:#fcf1f1; border-top: 4px solid #c04048; width: 46%;">
+                        <h3 style="color: #c04048;">Implementación Sede Piloto</h3>
+                        <div style="margin: 10px 0;"><span class="price-badge">600,00 € (Tarifa Plana)</span></div>
+                        <p style="font-size: 0.8em; line-height: 1.4;">Configuración integral de la sede piloto, base de datos local, adecuación de servidor y red VPN cifrada de alta seguridad (ZeroTier).</p>
+                    </div>
+                    <div class="card" style="background:#f8f9fa; border-top: 4px solid #1a1a1a; width: 46%;">
+                        <h3 style="color: #1a1a1a;">Instalación de Periféricos</h3>
+                        <div style="margin: 10px 0;"><span class="price-badge-dark">35,00 € / Hora</span></div>
+                        <p style="font-size: 0.8em; line-height: 1.4;">Configuración y puesta a punto de hardware en sitio (promedio 2 impresoras fiscales/comanderas). Facturación por tiempo técnico efectivo.</p>
+                    </div>
+                </div>
+                <div style="margin-top:25px; padding: 12px 18px; background: #fff5f5; border-left: 5px solid #c04048; border-radius: 4px;">
+                    <p style="margin: 0; font-size: 0.8em;"><strong>🎯 Alcance Claro:</strong> La sede piloto queda 100% operativa, conectada de manera segura con la Oficina Central y lista para operar en contingencia offline.</p>
+                </div>
+            </section>
+
+            <!-- Diapositiva 3: Paquete de Desarrollo e Integración -->
+            <section>
+                <h2>2. Desarrollo, Integración e Inducción <br><span style="font-size: 0.8em; color: #7f8c8d;">(Bolsa Prepagada de 100 Horas)</span></h2>
+                <div class="flex-container" style="align-items: center; margin-top: 10px;">
+                    <!-- Lista de detalles -->
+                    <div style="width: 52%; text-align: left;">
+                        <ul style="font-size: 0.8em; line-height: 1.45; margin-left: 1.2em;">
+                            <li><strong>Inversión Total del Paquete:</strong> <span class="highlight">3.500,00 €</span> (Tarifa preferencial: 35,00 €/h).</li>
+                            <li><strong>Desarrollo Base Odoo (40 hrs):</strong> Multimoneda, roles estrictos con claves de supervisor, bloqueo de texto libre y reportes por fecha.</li>
+                            <li><strong>Puente Central Profit (20-30 hrs):</strong> Sincronización unidireccional automática de artículos y precios fijos matriz ➔ sucursal.</li>
+                            <li><strong>Inducción y Soporte (Saldo restante):</strong> Capacitación in-situ al personal y acompañamiento técnico post-arranque.</li>
+                        </ul>
+                    </div>
+                    <!-- Gráfico Doughnut de distribución -->
+                    <div style="width: 44%;">
+                        <div class="canvas-container" style="height: 260px;">
+                            <canvas id="hoursDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diapositiva 4: Resumen de Inversión Inicial -->
+            <section>
+                <h2>3. Resumen de Inversión Inicial</h2>
+                <table class="proposal-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 65%;">Fase del Proyecto</th>
+                            <th style="width: 35%; text-align: right;">Subtotal Estimado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Configuración e Implementación Sede Piloto</strong><br>
+                                <small style="color: #666;">Servidor, BD local, VPN ZeroTier y puesta en marcha inicial.</small>
+                            </td>
+                            <td style="text-align: right; font-weight: bold;">600,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paquete de Desarrollo, Puente y Soporte</strong><br>
+                                <small style="color: #666;">Bolsa prepagada de 100 horas técnicas especializadas.</small>
+                            </td>
+                            <td style="text-align: right; font-weight: bold;">3.500,00 €</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>
+                                <strong>TOTAL INVERSIÓN INICIAL ESTIMADA*</strong>
+                            </td>
+                            <td style="text-align: right; font-size: 1.2em;">
+                                <strong>4.100,00 €</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.72em; color: #666; font-style: italic; margin-top: 5px;">* A este total se sumarán únicamente las horas exactas que tome la calibración física del hardware en sede (35,00 €/h).</p>
+                <div style="margin-top:15px; padding: 12px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0; text-align: center;">
+                    <p style="margin: 0; font-size: 0.8em; text-align: center;"><strong>💡 Escalabilidad Futura:</strong> Las siguientes sucursales <u>no pagan horas de desarrollo</u>; solo la tarifa fija de 600,00 € y sus periféricos.</p>
+                </div>
+            </section>
+
+            <!-- Diapositiva 5: Esquema de Pagos por Hitos -->
+            <section>
+                <h2>4. Esquema de Pagos por Hitos</h2>
+                <p style="text-align: center; font-size: 0.85em; color: #555; margin-bottom: 25px;">Flujo de caja seguro condicionado a entregables técnicos tangibles y verificables:</p>
+                
+                <div class="flex-container" style="align-items: stretch; justify-content: center; gap: 10px;">
+                    <!-- Hito 1 -->
+                    <div style="background:#f8f9fa; padding:15px; border-radius:8px; border-top:4px solid #1a1a1a; width:28%; box-sizing:border-box; text-align:center;">
+                        <span class="price-badge-dark" style="font-size:0.8em;">Hito 1: 50%</span>
+                        <h4 style="margin: 10px 0 5px 0; color:#1a1a1a; font-size:1em;">Anticipo</h4>
+                        <p style="font-size:0.75em; color:#444; margin: 0;">Inicio de configuración de red ZeroTier, servidor local y desarrollos base en Odoo.</p>
+                        <p style="font-weight:bold; color:#1a1a1a; font-size:0.9em; margin-top:10px;">2.050,00 €</p>
+                    </div>
+
+                    <div style="font-size:1.8em; color:#c04048; align-self: center;">➔</div>
+
+                    <!-- Hito 2 -->
+                    <div style="background:#fcf1f1; padding:15px; border-radius:8px; border-top:4px solid #c04048; width:28%; box-sizing:border-box; text-align:center;">
+                        <span class="price-badge" style="font-size:0.8em;">Hito 2: 30%</span>
+                        <h4 style="margin: 10px 0 5px 0; color:#c04048; font-size:1em;">Instalación Piloto</h4>
+                        <p style="font-size:0.75em; color:#444; margin: 0;">Al encender el sistema en la panadería y concretar la primera prueba de venta exitosa.</p>
+                        <p style="font-weight:bold; color:#c04048; font-size:0.9em; margin-top:10px;">1.230,00 €</p>
+                    </div>
+
+                    <div style="font-size:1.8em; color:#1a1a1a; align-self: center;">➔</div>
+
+                    <!-- Hito 3 -->
+                    <div style="background:#1a1a1a; padding:15px; border-radius:8px; border-top:4px solid #c04048; width:28%; box-sizing:border-box; text-align:center; color:white;">
+                        <span style="background-color:#c04048; color:white; padding:4px 8px; border-radius:4px; font-weight:bold; font-size:0.8em;">Hito 3: 20%</span>
+                        <h4 style="margin: 10px 0 5px 0; color:white; font-size:1em;">Contra Entrega</h4>
+                        <p style="font-size:0.75em; color:#ccc; margin: 0;">Tras finalizar la inducción y certificar la sincronización de precios matriz ➔ sucursal.</p>
+                        <p style="font-weight:bold; color:#fcf1f1; font-size:0.9em; margin-top:10px;">820,00 €</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diapositiva 6: Gráfico de Escalabilidad y Dilución -->
+            <section>
+                <h2>5. Modelo de Escalabilidad y Retorno</h2>
+                <p style="font-size: 0.8em; margin-bottom: 5px;">El desarrollo del puente y la base de Odoo se pagan <strong>una sola vez</strong>. Cada apertura futura reduce radicalmente el costo promedio por sede:</p>
+                <div class="canvas-container">
+                    <canvas id="scalabilityChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Diapositiva 7: Conclusión -->
+            <section>
+                <h2>Conclusión y Próximos Pasos</h2>
+                <div class="flex-container">
+                    <div class="card" style="background:#1a1a1a; color:white; width:45%;">
+                        <h3 style="color:#ecf0f1;">🛡️ Inversión Protegida</h3>
+                        <p style="color:#bdc3c7; font-size:0.85em; text-align: left;">
+                            • Sin costos ocultos de licencias por usuario.<br>
+                            • Pago respaldado por hitos 100% funcionales.<br>
+                            • Código, puente y configuraciones bajo control total de la empresa.
+                        </p>
+                    </div>
+                    <div class="card" style="background:#c04048; color:white; width:45%;">
+                        <h3 style="color:#ecf0f1;">🚀 Despliegue Rápido</h3>
+                        <p style="color:#fcf1f1; font-size:0.85em; text-align: left;">
+                            • Activación inmediata tras la aprobación de la Junta.<br>
+                            • Acompañamiento cercano durante el arranque.<br>
+                            • Cimentación sólida para expandir a futuras tiendas sin reinversión.
+                        </p>
+                    </div>
+                </div>
+                <h3 style="margin-top: 45px; font-style: italic; color:#7f8c8d; text-align: center;">¿Preguntas o comentarios para dar inicio?</h3>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Scripts de Reveal.js y Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Inicializar Reveal.js
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            slideNumber: 'c/t'
+        });
+
+        // Eventos para renderizar gráficos Chart.js al visitar las diapositivas
+        Reveal.on('slidechanged', event => {
+            // Diapositiva 3 (Índice 2): Gráfico de Distribución de Horas
+            if (event.indexh === 2) {
+                if (!window.hoursChartInstance) {
+                    const ctxHours = document.getElementById('hoursDistributionChart').getContext('2d');
+                    window.hoursChartInstance = new Chart(ctxHours, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Desarrollo Base Odoo (40h)', 'Puente Central Profit (25h)', 'Inducción y Soporte (35h)'],
+                            datasets: [{
+                                data: [40, 25, 35],
+                                backgroundColor: ['#c04048', '#1a1a1a', '#7f8c8d'],
+                                borderWidth: 2,
+                                borderColor: '#ffffff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: { font: { size: 10 }, boxWidth: 12 }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Diapositiva 6 (Índice 5): Gráfico de Escalabilidad y Dilución de Costo
+            if (event.indexh === 5) {
+                if (!window.scaleChartInstance) {
+                    const ctxScale = document.getElementById('scalabilityChart').getContext('2d');
+                    window.scaleChartInstance = new Chart(ctxScale, {
+                        type: 'bar',
+                        data: {
+                            labels: ['1 Sede (Piloto)', '2 Sedes', '3 Sedes', '4 Sedes', '5 Sedes'],
+                            datasets: [
+                                {
+                                    type: 'bar',
+                                    label: 'Costo Marginal de Incorporación (€)',
+                                    data: [4100, 600, 600, 600, 600],
+                                    backgroundColor: 'rgba(192, 64, 72, 0.75)',
+                                    borderColor: '#c04048',
+                                    borderWidth: 1.5,
+                                    order: 2
+                                },
+                                {
+                                    type: 'line',
+                                    label: 'Costo Promedio Invertido por Sede (€)',
+                                    data: [4100, 2350, 1766, 1475, 1300],
+                                    borderColor: '#1a1a1a',
+                                    backgroundColor: '#1a1a1a',
+                                    borderWidth: 3,
+                                    tension: 0.35,
+                                    fill: false,
+                                    order: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'bottom' },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return context.dataset.label + ': ' + context.parsed.y.toLocaleString('es-ES') + ' €';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: { display: true, text: 'Inversión (€)' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
